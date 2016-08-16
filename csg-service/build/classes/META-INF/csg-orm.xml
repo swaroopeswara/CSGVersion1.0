@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
+	<description>Payhub ORM Mapping File</description>
+
+	<package>com.xpts.csg.model</package>
+		
+	<entity class="com.xpts.csg.model.CsgUser" name="CsgUser" >
+		<named-query name="CsgUser.findById">
+			<query>From CsgUser where id = ?1</query>
+		</named-query>
+	</entity>
+</entity-mappings>

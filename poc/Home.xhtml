@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIS- Home</title>
+    <link href="App_Themes/Public.css" rel="stylesheet" />
+    <script src="Common/Scripts/Common.js"></script>
+    <script src="Common/Scripts/jquery-1.7.2.js"></script>
+</head>
+<body>
+    <header>
+        <div class="form-container">
+            <table style="width:100%;">
+                <tr>
+                    <td>
+                        <a href="Home.xhtml" title="Home" style="text-decoration:none;border:0;"><img class="LeftLogo" src="Common/Images/DRDLR_GREEN.png" /></a>
+                        <font class="Title">Cadastral Information System</font> 
+                    </td>
+                    <td>
+                        <a href="Home.xhtml" title="Home" style="text-decoration:none;border:0;"><img src="Common/Images/Logo.png" /></a>
+                    </td>
+                </tr>
+            </table>
+          
+           
+     </div>
+      
+    </header>
+    <div class="form-container" style="padding-top:15px; background-color:#F5F1E8">
+        <nav>
+            <ul>
+                <li onclick="Navigate2('Tracker.xhtml');">
+                    <img src="Common/Images/White/folder.png" />
+                    <div class="link" style="width:150px;">
+                        CIS  
+                    </div>
+                    <img class="slide" src="Common/Images/Slides/S-1.png" />
+                    <p style="font-size: 0.8em; padding:10px;">
+                       Sub Division, Sectional Title, General Plan
+                    </p>
+                </li>
+               
+            
+                <li onclick="Navigate2('Map.xhtml');">
+                    <img src="Common/Images/White/flag.png" />
+
+                    <div class="link">
+                        Map Viewer
+                    </div>
+                    <img class="slide" src="Common/Images/Slides/S-2.png" />
+                    <p style="font-size: 0.8em;margin:10px;">A GIS Viewer which lets you view the CIS data on a map</p>
+                </li>
+              
+                <li onclick="Navigate2('Tracker.xhtml');">
+                    <img src="Common/Images/White/search.png" />
+                    <div class="link">
+                        Search
+                    </div>
+                    <img class="slide" src="Common/Images/Slides/S-3.jpg" />
+                    <p style="font-size: 0.8em; margin :10px;">Content search and discovery tools for CIS Register</p>
+                </li>
+            </ul>
+        </nav>
+        <div style="clear: both;vertical-align:top;"></div>
+        <div style="min-height:400px;">
+            <table style="width:100%;">
+                <tr>
+                       <td style="vertical-align:top;">
+                        <div style="min-height:615px;" id="DocumentLibrary">
+                            <h2>Related documents</h2>
+                            <div style="clear:both; margin-bottom:100px;">
+                                 <ul >
+                                    <li style="margin-left:100px;">
+                                        <label>
+                                            <a href="#"  style="text-decoration:none;color:Black;">Application Guide</a>
+                                        </label>
+                                        <p></p>
+                                        <p>
+                                            Size: 20 MB
+                                        </p>
+                                    </li>
+                                     <li style="margin-left:140px;">
+                                         <label>
+                                             <a href="#"  style="text-decoration:none;color:Black;">Strategic Plans</a>
+                                         </label>
+                                         <p></p>
+                                         <p>
+                                             Size: 50 MB
+                                         </p>
+                                     </li>
+                                     <li style="margin-left:100px;">
+                                         <label>
+                                             <a href="#" style="text-decoration:none;color:Black;">Legislation and Policies</a>
+                                         </label>
+                                         <p></p>
+                                         <p>
+                                             Size: 76 MB
+                                         </p>
+                                     </li>
+                                     <li style="margin-left:100px;">
+                                         <label>
+                                             <a href="#" style="text-decoration:none;color:Black;">Annual Reports</a>
+                                         </label>
+                                         <p></p>
+                                         <p>
+                                             Size: 76 MB
+                                         </p>
+                                     </li>
+                                     <li style="margin-left:100px;">
+                                         <label>
+                                             <a href="#" style="text-decoration:none;color:Black;">Deeds Journals</a>
+                                         </label>
+                                         <p></p>
+                                         <p>
+                                             Size: 12 MB
+                                         </p>
+                                     </li>
+                                </ul>
+                            </div>
+
+                         <div style="clear: both;"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+       
+
+        <div style="clear: both;"></div>
+    </div>
+    <footer>
+        <div class="form-container" id="divFooter">
+
+            <div style="float: left; font-size: 0.9em;" id="LoginForm">
+                <span ID="LbLoginMessage"  ForeColor="Red" Font-Size="1.6em" Font-Bold="true" Text="invalid attempt" style="display:none;" ></span>
+                <table style="border-collapse: separate; border: dotted 1px #FAD228;">
+                    <tr>
+                        <td style="width: 180px; padding: 10px; vertical-align: top;">
+                            <div>
+                                User Name
+                                 </div>
+                            <input type="text" ID="TxEmail" ></input>
+                        </td>
+                        <td style="width: 180px; padding: 10px; vertical-align: top;">
+                            <div>
+                                Password
+                                  </div>
+                            <input ID="TxPassowrd" type="password"  TextMode="Password"></input>
+                        </td>
+                        <td style="width: 100px; text-align: center;">
+                            <img id="ImageButton1" tooltip="Click here to Login" src="Common/Images/White/check.png" width="36" onclick="Navigate2('Secure/Inbox.xhtml');" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="padding: 5px;">
+                          
+                        </td>
+                        <td style="padding: 5px; text-align: center; cursor: pointer; font-size: 0.9em;" onclick="location.href='#'">Reset Password</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="float: right; padding: 10px; width: 250px; font-style: italic;">
+                <span style="color: #FAD228; font-size: 1.2em; font-weight: 900; cursor: pointer;" onclick="window.location='Register.xhtml';">Register </span>to access the above features. 
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div id="product-branding" style="float:right;" onclick="OpenPopup('www.dataworld.co.za');">
+            <div>© Data World 2016</div>
+        </div>
+    </footer>
+</body>
+</html>

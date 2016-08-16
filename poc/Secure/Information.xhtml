@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIS- Information</title>
+    <link href="../App_Themes/Avant/Content.css" rel="stylesheet" />
+    <link href="../App_Themes/Avant/Layout.css" rel="stylesheet" />
+
+    <script src="../Common/Scripts/Common.js"></script>
+    <script src="../Common/Scripts/jquery-1.9.1.js"></script>
+    <script src="../Common/Scripts/jquery.autocomplete.min.js"></script>
+    <script src="../Common/Scripts/TaskPage.js"></script>
+
+</head>
+<body>
+    <header>
+
+        <img src="../Common/Images/DRDLR_GREEN.png" class="site-logo" />
+        <div class="screen-container">
+            <div id="site_name">
+                DRDLR - Cadastral Information System
+            </div>
+            <div id="screen_title">
+                <div id="FormTitle">
+                    Request- Information
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div data-title="Help">
+            <img src="../Common/Images/Black/questionmark.png"
+                 onclick="Navigate3('');" />
+        </div>
+        <div data-title="Search">
+            <img src="../Common/Images/Black/search.png"
+                 onclick="Navigate3('');" />
+
+
+        </div>
+        <div data-title="Inbox">
+            <img src="../Common/Images/Black/folder.png"
+                 onclick="Navigate3('Inbox.xhtml');" />
+        </div>
+
+        <div data-title="Map">
+            <img src="../Common/Images/Black/flag.png"
+                 onclick="Navigate3('');" />
+        </div>
+
+
+
+    </nav>
+
+    <aside id="SectionListPanel"></aside>
+
+    <div id="widget-container">
+        <div class="widget">
+            <img onclick="Navigate2('');" src="../Common/Images//Exit.png" style="width: 20px;" title="Click here to Logout" />
+            <div onclick="Navigate2('');">
+                <span style="cursor: pointer; color: #FAD228; font-size: 1.1em;">
+                    <span id="LbUserName" title="Click here to edit preferences " style="font-weight:bold;">User1</span>
+                </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div id="Widgets">
+            <div class="widget" data-title="Action">
+                <img onclick="WidgetContain(ApplicationPanel);" src="../Common/Images/White/edit.png" />
+                <div style="clear: both;"></div>
+                <div class="expansion-panel" id="ApplicationPanel" style="display: block;">
+                    <ul class="input-form" style="width: 10px;">
+                        <li>
+                            <label>
+                                User to Assign
+                            </label>
+                            <select name="dlUser" id="Widgets_ddlUser" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;">
+                                <option value="4">Admin User4</option>
+                                <option value="171">asd@a.com</option>
+                                <option value="157">PKS2</option>
+                                <option value="170">SD</option>
+
+                            </select>
+                        </li>
+                        <li>
+                            <label>
+                                Note
+                            </label>
+                            <textarea name="TxtNote" rows="4" cols="13" id="Widgets_txtDWADFNote" onkeydown="AutoExpand(this,7);" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;"></textarea>
+                        </li>
+
+                    </ul>
+                    <div style="clear: both;"></div>
+                </div>
+
+
+
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="screen-container main-page">
+
+        <div class="content">
+
+            <div class="content-section" data-title="Request Information Details" data-description="Request Information Details">
+                <ul class="input-form">
+                    <li>
+                        <label>SG Number</label>
+
+                        <input />
+
+                    </li>
+                    <li>
+                        <label>Request Type</label>
+
+                        <select>
+                            <option value="Gauteng">Coordinate list</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label>Provide in</label>
+
+                        <select>
+                            <option value="Email">My Registered Email</option>
+                            <option value="FTP">FTP</option>
+                        </select>
+                    </li>
+
+
+
+
+                </ul>
+                <div style="padding-left:30px;">
+                    <h3>FTP Details</h3>
+                    <table>
+                        <tr>
+                        <td> URL (ftp://)</td>    <td><input /></td>
+                        </tr>
+                       <tr><td>User Name </td><td> <input /></td></tr>
+                        <tr><td>Password</td><td>  <input type="password" /></td></tr>
+
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <footer>
+        <div id="product-branding" style="float:right;cursor:hand;" onclick="window.open('http://www.dataworld.co.za');">
+            <div>© Data World 2016</div>
+        </div>
+        <div class="screen-container">
+            <ul id="tool-bar">
+                <li class="tool butt-no-color seperator" data-title="Light">
+                    <img alt="Context" src="../Common/Images/bulb-icon.png" onclick="Toggle(ContextPanel);" />
+                </li>
+
+                <!--<li class="indicator" data-title="Application Pending since">
+                    <label>
+                        12 days
+                    </label>
+                </li>-->
+                <li class="tool" data-title="Done">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/check.png" onclick="Navigate3('Inbox.xhtml');" />
+                </li>
+
+                <!--<li class="tool butt-green-color" data-title="Save">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/Save.png" />
+                </li>-->
+                <li class="tool butt-red-color" data-title="Back">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/Back.png" onclick="Navigate3('Inbox.xhtml');" />
+                </li>
+
+                <li style="clear: both;"></li>
+
+            </ul>
+            <div id="ContextPanel" class="context" style="display:none">
+
+
+                <h2 style="padding-top:50px;">Business Context</h2>
+                <table style="width:90%;">
+                    <tbody>
+                        <tr>
+
+                            <td class="current-step shadow">
+                                <label>Provide Information</label>
+
+                                <p>
+                                    a) Only the Information Supervisor can access the Information pool;<br />
+                                    b) The Information Requestor should be able to query the status of his request at any time, and the system should be able to indicate the process the request is in at that particular time;<br />
+                                    c) The system should not indicate the user the task is with but should only report on the process the request is in;<br />
+                                    d) The database is updated all the time when a change happens;<br />
+                                    e) Audit trails are kept at all times i.e. (on Create, Update and Delete);<br />
+                                    f) The tracking number format for Information Provision is in the following format TRC_’UserID’_’CCYYMMDD’ e.g. ‘TRC_1234_20151020’<br />
+                                    g) The Information Supervisor should be able to access all the reports pertaining to Information requests and supply;<br />
+                                </p>
+
+                                <p></p>
+
+                            </td>
+                            <td class="arrow">
+                                <img src="../Common/Images/next-step-arrow.png" />
+                            </td>
+                            <td class="next-step">
+                                <label><br /><br />Information Officer<br /><br /><font>Approved or Reject</font><br /></label>
+
+                                <p></p>
+
+                            </td>
+                        </tr>
+                        <!--<tr id="ContextHelp_Context1_FailedStepPanel">
+                            <td class="failed-step shadow">
+                                <label></label>
+
+                                <p></p>
+                            </td>
+                        </tr>-->
+
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </footer>
+    <script>
+        LoadSections();
+    </script>
+</body>
+</html>

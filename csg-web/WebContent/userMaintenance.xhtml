@@ -1,0 +1,66 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+
+	<title>CGS User Form Submission</title>
+
+</h:head>
+
+<h:body>
+
+	<h:form>
+
+		<p:outputLabel value="User Details:" />
+		<h:panelGrid columns="2" cellpadding="5">
+		
+			<p:outputLabel value="Indicator:" />
+			
+			<p:inputText value="#{userMaintenanceController.cgsUser.indicator}" />
+
+			<p:outputLabel value="Name" />
+
+			<p:inputText value="#{userMaintenanceController.cgsUser.name}" />
+
+			<p:outputLabel value="User Name" />
+
+			<p:inputText value="#{userMaintenanceController.cgsUser.username}" />
+
+			<p:outputLabel value="Password" />
+
+			<p:password value="#{userMaintenanceController.cgsUser.password}" />
+
+			<p:outputLabel value="Email Address" />
+
+			<p:inputText
+				value="#{userMaintenanceController.cgsUser.emailAddress}" />
+
+			<p:outputLabel value="Pls Number" />
+
+			<p:inputText value="#{userMaintenanceController.cgsUser.plsNumber}" />
+
+			<p:outputLabel value="Audit Trail ID" />
+
+			<p:inputText
+				value="#{userMaintenanceController.cgsUser.auditTrailID}" />
+
+			<p:outputLabel/>
+
+			<p:commandButton value="Save"
+				action="#{userMaintenanceController.saveUser()}"></p:commandButton>
+				
+			<p:commandButton value="Pdf And Email Generation"
+				action="#{emailPdfController.pdfAndEmailGeneration()}"></p:commandButton>
+				
+			
+		</h:panelGrid>
+
+	</h:form>
+
+</h:body>
+
+</html>

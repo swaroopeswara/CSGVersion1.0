@@ -1,0 +1,563 @@
+﻿body {
+    font-family: Arial;
+    font-size: 10pt;
+    top: 0px;
+    left: 0px;
+}
+
+h1 {
+    font-size: 2.0em;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    color: black;
+    border-bottom: outset thin;
+    width: 100%;
+    opacity: 0.9;
+    z-index: 100;
+}
+
+    header:hover {
+        opacity: 1;
+    }
+
+    header .site-logo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 55px;
+        cursor: pointer;
+    }
+
+    header .site-logo-small {
+        margin: 10px 20px 10px 0px;
+        width: 40px;
+        cursor: pointer;
+        float: left;
+    }
+
+    header #site_name {
+        font-size: 2.2em;
+        font-weight: 900;
+        font-family: Helvetica;
+        /*font-family: 'Arial Black';*/
+        padding: 10px 0px 10px 0px;
+        color: #0A2D6D;
+        vertical-align: middle;
+        opacity: 0.8;
+    }
+
+    header #screen_title {
+        width: 870px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.6em;
+        color: rgba(0, 0, 0, 0.84);
+        font-weight: 700;
+        font-family: 'Arial Black';
+        vertical-align: middle;
+        border-top: solid 1px gray;
+        padding: 5px 15px 5px 15px;
+    }
+
+        header #screen_title .flag {
+            opacity: 0.7;
+            float: right;
+            font-weight: bold;
+            font-size: 10pt;
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 3px;
+            cursor: help;
+        }
+
+            header #screen_title .flag div {
+                background-color: #0A2D6D;
+                opacity: 0.9;
+                color: #FAD228;
+                float: right;
+                font-weight: 900;
+                text-align: right;
+                vertical-align: middle;
+                padding: 5px;
+            }
+
+                header #screen_title .flag div p {
+                    font-weight: 300;
+                    font-style: italic;
+                    font-size: 0.9em;
+                    padding: 0 10px 0 10px;
+                    color: white;
+                }
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+}
+
+    nav div {
+        float: right;
+    }
+
+        nav div:after {
+            text-align: center;
+            font-size: 0.9em;
+            color: #0A2D6D;
+            display: block;
+            content: attr(data-title);
+        }
+
+    nav img {
+        width: 40px;
+        cursor: pointer;
+        margin: 5px 7px 1px 7px;
+    }
+
+.screen-full {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.screen-container {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-page {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: solid 1px gray;
+    background-color: white;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    min-height:430px;
+}
+
+#widget-container {
+    position: fixed;
+    right: 0px;
+    top: 92px;
+    display: block;
+}
+
+    #widget-container .widget {
+        padding: 10px;
+        border: solid 1px gray;
+        border-right: 0;
+        min-width: 150px;
+        background-color: #0A2D6D;
+        opacity: 0.8;
+        color: white;
+        margin-top: 3px;
+    }
+
+        #widget-container .widget:hover {
+            opacity: 1;
+            transition: ease;
+            transition-duration: 1s;
+        }
+
+        #widget-container .widget img {
+            cursor: pointer;
+            width: 24px;
+            float: right;
+        }
+
+        #widget-container .widget:before {
+            content: attr(data-title);
+            padding: 5px;
+            font-size: 1.1em;
+            float: left;
+            font-weight: bold;
+            display: block;
+        }
+
+        #widget-container .widget .expansion-panel {
+            padding: 30px;
+            min-width: 200px;
+        }
+
+
+.content-section {
+    min-height: 65vh;
+    margin: 0px 20px 30px 20px;
+    border: dotted 1px gray;
+}
+
+    .content-section[data-title]:before {
+        content: attr(data-title);
+        background-color: aliceblue;
+        font-size: 1.2em;
+        padding: 10px;
+        font-family: 'arial black';
+        color: #0A2D6D;
+        font-weight: bold;
+        vertical-align: bottom;
+        display: block;
+    }
+
+    .content-section:after {
+        display: block;
+        content: ' ';
+        clear: both;
+    }
+
+.half-left {
+    width: 45%;
+    float: left;
+}
+
+.half-right {
+    width: 45%;
+    float: right;
+}
+
+.min-height {
+    min-height: 400px;
+}
+
+.seperator-right {
+    border-right: 1px dotted orange;
+}
+
+.inset-pad {
+    padding: 10px;
+}
+
+aside {
+    float: left;
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    padding: 20px;
+    z-index: 100;/*-10 if the captions are very long*/
+   
+}
+
+    /*aside:hover {
+        z-index: 100;
+    }*/
+
+    aside p {
+        font-weight: 100;
+        font-size: 0.8em;
+        font-style: italic;
+        padding-left: 10px;
+        color: white;
+    }
+
+    aside div {
+        padding: 5px 10px 5px 10px;
+        cursor: pointer;
+        width: 180px;
+        height: 15px;
+        font-weight: 900;
+        overflow: hidden;
+        margin: 3px;
+        color: #0A2D6D;
+        opacity: 0.7;
+    }
+
+        aside div:hover {
+            background-color: #0A2D6D;
+            height: auto;
+            color: #FAD228;
+            width: 200px;
+        }
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    padding-bottom: 5px;
+    background-color: #0A2D6D;
+    color: white;
+    opacity: 0.9;
+    width: 100%;
+    left: 0px;
+    border-top: thin outset;
+    z-index: 100;
+    min-height: 80px;
+}
+
+    footer:hover {
+        opacity: 1;
+    }
+
+    footer #product-branding {
+        position: fixed;
+        left: 10px;
+        bottom: 10px;
+        color: white;
+        height: 50px;
+        vertical-align: middle;
+        font-weight: 900;
+        font-size: 1.6em;
+        font-family: 'Arial';
+        padding: 5px 10px 5px 10px;
+        border: solid 3px gray;
+        border-radius: 10px;
+        text-align: center;
+        zoom: 0.7;
+        cursor: pointer;
+        z-index: 101;
+        overflow: no-display;
+    }
+
+        footer #product-branding:hover {
+            zoom: 1;
+        }
+
+        footer #product-branding label {
+            color: red;
+        }
+
+        footer #product-branding div {
+            clear: both;
+            border-top: solid 1px white;
+            font-size: 9pt;
+            font-weight: 100;
+            padding-top: 3px;
+        }
+
+    footer #tool-bar {
+        list-style-type: none;
+        margin-top: 0px;
+        padding-top: 0px;
+        margin-top: 0;
+        width: 100%;
+        float: right;
+        z-index: 102;
+    }
+
+        footer #tool-bar .tool {
+            float: right;
+            padding: 0px 5px 0px 5px;
+            border-top-style: solid;
+            border-top-width: 6px;
+            border-top-color: gray;
+        }
+
+            footer #tool-bar .tool:after {
+                content: attr(data-title);
+                text-align: center;
+                font-size: 0.8em;
+                color: White;
+                display: block;
+            }
+
+            footer #tool-bar .tool img {
+                width: 36px;
+                cursor: pointer;
+                margin: 10px 3px 0px 3px;
+            }
+
+        footer #tool-bar .seperator {
+            border-left: 3px dotted orange;
+            padding-left: 15px;
+            margin-left: 20px;
+        }
+
+        footer #tool-bar .butt-no-color {
+            border-top-color: transparent;
+        }
+
+        footer #tool-bar .butt-red-color {
+            border-top-color: red;
+        }
+
+        footer #tool-bar .butt-green-color {
+            border-top-color: lime;
+        }
+
+        footer #tool-bar .indicator {
+            min-width: 100px;
+            float: left;
+            padding: 5px;
+            margin: 3px 5px 5px 5px;
+            border: none;
+            background-color: #20468b;
+        }
+
+            footer #tool-bar .indicator label {
+                font-size: 1.6em;
+                font-weight: 900;
+                display: block;
+                text-align: center;
+                margin: 0 15px 0 15px;
+            }
+
+            footer #tool-bar .indicator .active-link {
+                cursor: pointer;
+            }
+
+            footer #tool-bar .indicator:before {
+                content: attr(data-title);
+                font-size: 0.8em;
+                display: block;
+            }
+
+ footer #tool-bar .indicatorErr {
+            min-width: 100px;
+            float: left;
+            padding: 5px;
+            margin: 3px 5px 5px 5px;
+            border: none;
+            /*background-color: #20468b;*/
+        }
+
+            footer #tool-bar .indicatorERR label {
+                font-size: 1.6em;
+                font-weight: 900;
+                display: block;
+                text-align: center;
+                margin: 0 15px 0 15px;
+            }
+        footer #tool-bar .alert-max {
+            background-color: red;
+        }
+
+        footer #tool-bar .alert-med {
+            background-color: orangered;
+        }
+
+        footer #tool-bar .chart-item {
+            overflow: hidden;
+            margin-bottom: 10px;
+            float: left;
+            margin: 3px 5px 3px 5px;
+            padding-left: 5px;
+            border: none;
+            background-color: #20468b;
+            font-style: normal;
+        }
+
+
+            footer #tool-bar .chart-item p {
+                margin: 5px;
+                float: right;
+                font-weight: 900;
+                display: block;
+                width: auto;
+                text-align: right;
+            }
+
+            footer #tool-bar .chart-item canvas {
+                zoom: 0.4;
+                opacity: 0.7;
+                /*border: 1px solid #FAD228;*/
+                margin: 3px;
+                padding:10px 5px;
+                float: left;
+            }
+
+                footer #tool-bar .chart-item canvas:hover {
+                    zoom: 1;
+                    z-index: 1000;
+                    opacity: 1;
+                    border-style: none;
+                    cursor: default;
+                }
+
+.shadow {
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+.spin-loader {
+    /*background-color: #F4FBFE;*/
+    background-color: black;
+    color: white;
+    z-index: 10000;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+}
+
+    .spin-loader #spin-icon {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        vertical-align: middle;
+        font-family: 'Lucida Console';
+        font-weight: 300;
+        font-size: 2em;
+        color: lime;
+        display: block;
+        text-align: center;
+    }
+
+    .spin-loader #product-branding {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        width: 150px;
+        vertical-align: middle;
+        font-weight: 900;
+        font-size: 1.6em;
+        font-family: 'Arial';
+        padding: 5px 10px 5px 10px;
+        border: solid 3px gray;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+        .spin-loader #product-branding label {
+            color: red;
+        }
+
+        .spin-loader #product-branding div {
+            clear: both;
+            border-top: solid 1px;
+            font-size: 9pt;
+            font-weight: 100;
+            padding-top: 3px;
+        }
+
+.validation-summary {
+    font-size: 1.2em;
+    padding: 10px;
+    font-weight: bold;
+    color: rgba(240,240,240,0.7);
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px dotted #20468b;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+    .validation-summary img {
+        cursor: pointer;
+        width: 24px;
+        float: right;
+    }
+
+    .validation-summary li {
+        /*display :none;*/
+        font-weight: 400;
+        font-size: 0.8em;
+    }
+
+        .validation-summary li:nth-child(n + 5) {
+            display: none;
+        }

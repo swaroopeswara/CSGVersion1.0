@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIS- Map</title>
+    <link href="App_Themes/Public.css" rel="stylesheet" />
+    <script src="Common/Scripts/Common.js"></script>
+    <script src="Common/Scripts/jquery-1.7.2.js"></script>
+</head>
+<body>
+    <header>
+        <div class="form-container">
+            <table style="width:100%;">
+                <tr>
+                    <td>
+                        <a href="Home.xhtml" title="Home" style="text-decoration:none;border:0;"><img class="LeftLogo" src="Common/Images/DRDLR_GREEN.png" /></a>
+                        <font class="Title">Cadastral Information System</font>
+                    </td>
+                    <td>
+                        <a href="Home.xhtml" title="Home" style="text-decoration:none;border:0;"><img src="Common/Images/Logo.png" /></a>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+
+    </header>
+    <div class="form-container registration-form" style="padding-top:15px; background-color:#F5F1E8">
+
+        <div style="clear: both;vertical-align:top;"></div>
+        <div style="min-height:400px;">
+            <table style="width:100%;">
+                <tr>
+                    <td style="vertical-align:top;">
+                        <h2>Map Viewer</h2>
+                        <img src="Common/Images/Dummy/Landuse_Aerial.jpg" width="800px" />
+                 
+
+                    </td>
+                </tr>
+            </table>
+            <div style="clear: both; padding-top: 10px; border-top: 1px dotted gray; margin-top: 30px; margin-top:50px;">
+                <img id="ImageButton2" tooltip="Click here to go back" imagealign="Left" width="36" src="Common/Images/Black/back.png" onclick="Navigate2('Home.xhtml');" />
+
+                <div id="SearchTip" style="margin-top: 50px; font-weight: 300; font-style: italic; width: 50%; float: right; line-height: 1.5;">
+                    If you wish to search using other criterion like SG Number, Workflow Tasks, ERF or Farm Description, please <a href="Register.xhtml" onclick="Navigate2('Home.xhtml');">Register</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div style="clear: both;"></div>
+ 
+    <footer>
+
+        <div id="product-branding" style="float:right;cursor:hand;" onclick="window.open('http://www.dataworld.co.za');">
+            <div>© Data World 2016</div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIS- Inbox</title>
+    <link href="../App_Themes/Avant/Content.css" rel="stylesheet" />
+    <link href="../App_Themes/Avant/Layout.css" rel="stylesheet" />
+
+    <script src="../Common/Scripts/Common.js"></script>
+    <script src="../Common/Scripts/jquery-1.9.1.js"></script>
+    <script src="../Common/Scripts/jquery.autocomplete.min.js"></script>
+    <script src="../Common/Scripts/TaskPage.js"></script>
+
+</head>
+<body>
+    <header>
+
+        <img src="../Common/Images/DRDLR_GREEN.png" class="site-logo" />
+        <div class="screen-container">
+            <div id="site_name">
+                DRDLR - Cadastral Information System
+            </div>
+            <div id="screen_title">
+                <div id="FormTitle">
+                    Inbox
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div data-title="Help">
+            <img src="../Common/Images/Black/questionmark.png"
+                 onclick="Navigate3('');" />
+        </div>
+        <div data-title="Search">
+            <img src="../Common/Images/Black/search.png"
+                 onclick="Navigate3('');" />
+
+
+        </div>
+        <div data-title="Inbox">
+            <img src="../Common/Images/Black/folder.png"
+                 onclick="Navigate3('');" />
+        </div>
+
+        <div data-title="Map">
+            <img src="../Common/Images/Black/flag.png"
+                 onclick="Navigate3('');" />
+        </div>
+
+
+
+    </nav>
+
+  
+
+    <aside id="SectionListPanel"></aside>
+
+    <div id="widget-container">
+        <div class="widget">
+            <img onclick="Navigate2('../Logout.xhtml');" src="../Common/Images//Exit.png" style="width: 20px;" title="Click here to Logout" />
+            <div onclick="Navigate2('');">
+                <span style="cursor: pointer; color: #FAD228; font-size: 1.1em;">
+                    <span id="LbUserName" title="Click here to edit preferences " style="font-weight:bold;">User1</span>
+                </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div id="Widgets">
+            <div class="widget" data-title="Lodgement">
+                <img onclick="WidgetContain(ApplicationPanel);" src="../Common/Images/White/add.png" />
+                <div style="clear: both;"></div>
+                <div class="expansion-panel" id="ApplicationPanel" style="display: block;">
+                    <ul class="option-list">
+                        <li onclick="Navigate2('Subdivision1.xhtml');">Subdivision</li>
+                        <li onclick="Navigate2('');" style="color:gray;">Sectional Title</li>
+                        <li onclick="Navigate2('');" style="color:gray;">General Plan</li>
+                    </ul>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <div class="widget" data-title="Tools">
+                <img onclick="WidgetContain(Tools);" src="../Common/Images/White/i.png" />
+                <div style="clear: both;"></div>
+                <div class="expansion-panel" id="Tools" style="display: block;">
+                    <ul class="option-list">
+                        <li onclick="Navigate2('Information.xhtml');">Request Information</li>
+                        <li onclick="Navigate2('');">Workflow Engine</li>
+                        <li onclick="Navigate2('');">Test WorkFlow</li>
+                        <li onclick="Navigate2('');">Dashboard</li>
+                        <li onclick="Navigate2('');">Reports</li>
+                    </ul>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <div class="widget" data-title="Delegate Tasks">
+                <img onclick="WidgetContain(DelegatePanel);" src="/LandMatrix/Common/Images/White/next.png"/>
+                <div style="clear: both;"></div>
+                <div id="DelegatePanel" class="expansion-panel " style="display: none;">
+                    <ul class="input-form" style="width: 200px;">
+                        <li>
+                            <label>
+                                User
+                                <span id="Widgets_RequiredFieldValidator2" style="color:Red;visibility:hidden;"> required</span>
+                            </label>
+                            <select name="ctl00$Widgets$ddlUser" id="Widgets_ddlUser" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;">
+                                <option value="">[--Select--]</option>
+                                <option value="4">Admin User4</option>
+                                <option value="171">asd@a.com</option>
+                                <option value="157">PKS2</option>
+                                <option value="170">SD</option>
+
+                            </select>
+                        </li>
+                        <li>
+                            <label>
+                                Start Date
+                                <span id="Widgets_cmpVal1" style="color:Red;display:none;">cannot be greater than End Date</span>
+                                <span id="Widgets_RequiredFieldValidator3" style="color:Red;display:none;"> required</span>
+                            </label>
+                            <input name="ctl00$Widgets$TxStartDate" type="text" id="Widgets_TxStartDate" onclick="showCalendarControl(this)" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;" />
+                        </li>
+                        <li>
+                            <label>
+                                End Date
+                                <span id="Widgets_CompareValidator1" style="color:Red;display:none;">cannot be less than today's date</span>
+                                <span id="Widgets_RequiredFieldValidator4" style="color:Red;display:none;"> required</span>
+                            </label>
+                            <input name="ctl00$Widgets$TxEndDate" type="text" id="Widgets_TxEndDate" onclick="showCalendarControl(this)" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;" />
+                        </li>
+                    </ul>
+                    <input type="image" id="Widgets_Delegator" title="Click here to refersh screen" src="../Common/Images/White/refresh.png" align="right" style="width:32px;margin: 20px 40px 0 0;" />
+                    <div style="clear: both;"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="screen-container main-page">
+        <div class="content">
+
+            <div class="content-section" data-description="HIDE" style="border: none;">
+                <div id="MainScreen_pnlMain">
+
+                    <div class="content">
+                        <div id="MainScreen">
+                            <h3>Registered Lodgement</h3>
+                            <table id="MainForm_TblInbox" cellspacing="0" cellpadding="5" style="font-size:0.9em;border-collapse:collapse;">
+                                <tbody>
+                                    <tr class="ItemTitle">
+                                        <th style="width:70px;">Date</th>
+                                        <th style="width:100px;">Status</th>
+                                        <th align="left" style="padding-left: 20px;">Description</th>
+                                        <th align="left" style="padding-left: 20px;">Duration</th>
+                                     
+                                    </tr>
+
+                                    <tr>
+                                        <td align="center">28/06/2016</td>
+                                        <td align="center">Register Clerk</td>
+                                        <td style="padding-left:20px;">Examiner ABC</td>
+                                        <td align="center">10 hours</td>
+                                   
+                                    </tr>
+
+                                    <tr class="AlterNativeRow">
+                                        <td align="center">28/06/2016</td>
+                                        <td align="center">Register Clerk</td>
+                                        <td style="padding-left:20px;">Condition Assessment : Capture Details - TaskID : 3570 - Van.Van.KB250D</td>
+                                        <td align="center">10 hours</td>
+                                
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+
+                            <br /><br />
+                            <h3>My Tasks</h3>
+                            <table id="MainForm_TblInbox" cellspacing="0" cellpadding="5" style="font-size:0.9em;border-collapse:collapse;">
+                                <tbody>
+                                    <tr class="ItemTitle">
+                                        <th>#</th>
+                                        <th style="width:70px;">Date</th>
+                                        <th style="width:100px;">Status</th>
+                                        <th align="left" style="padding-left: 20px;">Description</th>
+                                        <th align="left" style="padding-left: 20px;">Duration</th>
+                                        <th align="left" style="padding-left: 20px;"></th>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td align="center">28/06/2016</td>
+                                        <td align="center">Register Clerk</td>
+                                        <td style="padding-left:20px;">Condition Assessment : Capture Details - TaskID : 3570 - Van.Van.KB250D</td>
+                                        <td align="center">10 hours</td>
+                                        <td align="center"><a href="#">Open</a> </td>
+                                    </tr>
+
+                                    <tr class="AlterNativeRow">
+                                        <td>2</td>
+                                        <td align="center">28/06/2016</td>
+                                        <td align="center">Register Clerk</td>
+                                        <td style="padding-left:20px;">Condition Assessment : Capture Details - TaskID : 3570 - Van.Van.KB250D</td>
+                                        <td align="center">10 hours</td>
+                                        <td align="center"><a href="#">Open</a> </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div id="product-branding" style="float:right;cursor:hand;" onclick="window.open('http://www.dataworld.co.za');">
+            <div>© Data World 2016</div>
+        </div>
+    </footer>
+
+</body>
+</html>

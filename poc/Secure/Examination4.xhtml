@@ -1,0 +1,629 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIS</title>
+    <link href="../App_Themes/Avant/Content.css" rel="stylesheet" />
+    <link href="../App_Themes/Avant/Layout.css" rel="stylesheet" />
+
+    <script src="../Common/Scripts/Common.js"></script>
+    <script src="../Common/Scripts/jquery-1.9.1.js"></script>
+    <script src="../Common/Scripts/jquery.autocomplete.min.js"></script>
+    <script src="../Common/Scripts/TaskPage.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            CreateOCRTable();
+        });
+
+    </script>
+
+
+
+
+</head>
+<body>
+    <header>
+
+        <img src="../Common/Images/DRDLR_GREEN.png" class="site-logo" />
+        <div class="screen-container">
+            <div id="site_name">
+                Cadastral Information System
+            </div>
+            <div id="screen_title">
+                <div id="FormTitle">
+                    Perform Technical Examination
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div data-title="Help">
+            <img src="../Common/Images/Black/questionmark.png"
+                 onclick="Navigate3('');" />
+        </div>
+        <div data-title="Search">
+            <img src="../Common/Images/Black/search.png"
+                 onclick="Navigate3('');" />
+
+
+        </div>
+        <div data-title="Inbox">
+            <img src="../Common/Images/Black/folder.png"
+                 onclick="Navigate3('Inbox.xhtml');" />
+        </div>
+
+        <div data-title="Map">
+            <img src="../Common/Images/Black/flag.png"
+                 onclick="Navigate3('');" />
+        </div>
+
+
+
+    </nav>
+
+    <aside id="SectionListPanel"></aside>
+
+    <div id="widget-container">
+        <div class="widget">
+            <img onclick="Navigate2('');" src="../Common/Images//Exit.png" style="width: 20px;" title="Click here to Logout" />
+            <div onclick="Navigate2('');">
+                <span style="cursor: pointer; color: #FAD228; font-size: 1.1em;">
+                    <span id="LbUserName" title="Click here to edit preferences " style="font-weight:bold;">User1</span>
+                </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div id="Widgets">
+            <div class="widget" data-title="Action">
+                <img onclick="WidgetContain(ApplicationPanel);" src="../Common/Images/White/edit.png" />
+                <div style="clear: both;"></div>
+                <div class="expansion-panel" id="ApplicationPanel" style="display: block;">
+                    <ul class="input-form" style="width: 10px;">
+                        <li>
+                            <label>
+                                User to Assign
+                            </label>
+                            <select name="ctl00$Widgets$ddlUser" id="Widgets_ddlUser" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;">
+                                <option value="4">Admin User4</option>
+                                <option value="171">asd@a.com</option>
+                                <option value="157">PKS2</option>
+                                <option value="170">SD</option>
+
+                            </select>
+                        </li>
+                        <li>
+                            <label>
+                                Note
+                            </label>
+                            <textarea name="TxtNote" rows="4" cols="13" id="Widgets_txtDWADFNote" onkeydown="AutoExpand(this,7);" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;"></textarea>
+                        </li>
+
+                    </ul>
+                    <div style="clear: both;"></div>
+                </div>
+
+
+
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="screen-container main-page">
+
+        <div class="content">
+
+            <div>
+                <table class="kpi-container" data-title="Task header">
+                    <tbody>
+                        <tr>
+                            <td>
+                                REF#
+                                <div>
+                                    <span id="MainScreen_lblRef">140</span>
+                                </div>
+                            </td>
+                            <td>
+                                Process Name
+                                <div>
+                                    <span id="MainScreen_lblProcessName">Lodgement- Subdivision</span>
+                                </div>
+                            </td>
+                            <td>
+                                Posted
+                                <div>
+                                    <span id="MainScreen_lblPostedOn">3 hour back</span>
+                                </div>
+                            </td>
+                            <td>
+                                On
+                                <div>
+                                    <span id="MainScreen_lblPostedOn">ERF 1317 of WINGATE PARK</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section" data-title="Application Details" data-description="Application Details">
+                <ul class="input-form">
+                    <li>
+                        <label>Province</label>
+                        <span>Gauteng</span>
+                    </li>
+
+                    <li>
+                        <label>ERF</label>
+
+                        <span>120</span>
+
+                    </li>
+
+
+
+                    <li>
+                        <label>Township</label>
+
+                        <span>WINGATE PARK</span>
+
+                    </li>
+
+
+                </ul>
+                <div style="padding-left:20px;">
+                    <h4>Batch Number: 0001/2016</h4>
+                    <h4>SG Numbers</h4>
+                    <table style="width:80%;">
+                        <tr class="ItemTitle">
+                            <td>#</td>
+                            <td>SG Number</td>
+                            <td>Type</td>
+                            <td>Description</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>SR00001/2016</td>
+                            <td>Parent</td>
+                            <td>
+                                ERF 317 of WINGATE PARK
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>SR00002/2016</td>
+                            <td>Child</td>
+                            <td>
+                                Portion 1 of ERF 317 of WINGATE PARK
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="content-section" data-title="OCR - Data" data-description="OCR - Data">
+                <table id="OCRTable"></table>
+                <div style="text-align:right;margin-top:0px">
+                    <img alt="Context" src="../Common/Images/Black/add.png" title="Add Row" style="width:25px;height:25px;margin-right:20px; cursor:pointer" onclick="AddRow();" />
+                </div>
+
+            </div>
+
+            <div class="content-section" data-title="Superimposition" data-description="Superimposition" style="min-height:100px;">
+                <div class="map-view ">
+                    <iframe src="../GIS/map.xhtml" id="MainScreen_PropertyLinker1_frmMap" style="width: 100%; height: 350px; border: none; overflow: hidden;" scroll="0"></iframe>
+                </div>
+            </div>
+
+
+            <div class="content-section" data-title="Digram Docket" data-description="Digram Docket">
+
+                <table width="90%" class="DocketTable">
+                    <tr><td colspan="3" class="docCategory">Examiner</td><td><input type="text" name="txtExaminer" /> </td><td colspan="4"></td> </tr>
+                    <tr><td colspan="3" class="docCategory">Scrutiniser</td><td><input type="text" name="txtScrut" /> </td><td colspan="4" class="docCategory">Computing</td></tr>
+                    <tr><td width="5%">1</td><td width="5%"></td><td width="22%">Office fees</td><td width="18%"><ul><li><input type="radio" name="rb1" value="1" />Yes<input type="radio" name="rb1" value="0" checked="checked" />No</li></ul></td><td width="5%">14</td><td width="5%">a</td><td width="22%">Consistency	</td><td width="18%"><ul><li><input type="radio" name="rb14a" value="1" />Yes<input type="radio" name="rb14a" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">2</td><td width="5%"></td><td width="22%">Receipt No</td><td width="18%"><ul><li><input type="radio" name="rb2" value="1" />Yes<input type="radio" name="rb2" value="0" checked="checked" />No</li></ul></td><td width="5%">14</td><td width="5%">b</td><td width="22%">Checked	</td><td width="18%"><ul><li><input type="radio" name="rb14b" value="1" />Yes<input type="radio" name="rb14b" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">3</td><td width="5%"></td><td width="22%">Ord 33/1934</td><td width="18%"><ul><li><input type="radio" name="rb3" value="1" />Yes<input type="radio" name="rb3" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">3</td><td width="5%">a</td><td width="22%">Act 4/1984, Act 113/1991</td><td width="18%"><ul><li><input type="radio" name="rb3a" value="1" />Yes<input type="radio" name="rb3a" value="0" checked="checked" />No</li></ul></td><td colspan="4" class="docCategory">Status</td></tr>
+                    <tr><td width="5%">3</td><td width="5%">b</td><td width="22%">Ord 15/1985</td><td width="18%"><ul><li><input type="radio" name="rb3b" value="1" />Yes<input type="radio" name="rb3b" value="0" checked="checked" />No</li></ul></td><td width="5%">45</td><td width="5%">c</td><td width="22%">Closure done	</td><td width="18%"><ul><li><input type="radio" name="rb45c" value="1" />Yes<input type="radio" name="rb45c" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">3</td><td width="5%">c</td><td width="22%">Act 15/1987</td><td width="18%"><ul><li><input type="radio" name="rb3c" value="1" />Yes<input type="radio" name="rb3c" value="0" checked="checked" />No</li></ul></td><td width="5%">45</td><td width="5%">d</td><td width="22%">Checked 	</td><td width="18%"><ul><li><input type="radio" name="rb45d" value="1" />Yes<input type="radio" name="rb45d" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">4</td><td width="5%"></td><td width="22%">Act 70/1970</td><td width="18%"><ul><li><input type="radio" name="rb4" value="1" />Yes<input type="radio" name="rb4" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">5</td><td width="5%">a</td><td width="22%">Act 21/1940, Act 3/2003</td><td width="18%"><ul><li><input type="radio" name="rb5a" value="1" />Yes<input type="radio" name="rb5a" value="0" checked="checked" />No</li></ul></td><td colspan="4" class="docCategory">PA'S Name </td></tr>
+                    <tr><td width="5%">5</td><td width="5%">b</td><td width="22%">Act 7/1998</td><td width="18%"><ul><li><input type="radio" name="rb5b" value="1" />Yes<input type="radio" name="rb5b" value="0" checked="checked" />No</li></ul></td><td width="5%">52</td><td width="5%">a</td><td width="22%">Survey Rej	</td><td width="18%"><ul><li><input type="radio" name="rb52a" value="1" />Yes<input type="radio" name="rb52a" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">6</td><td width="5%"></td><td width="22%">Other:</td><td width="18%"><ul><li><input type="radio" name="rb6" value="1" />Yes<input type="radio" name="rb6" value="0" checked="checked" />No</li></ul></td><td width="5%">52</td><td width="5%">b</td><td width="22%">Survey Accepted	</td><td width="18%"><ul><li><input type="radio" name="rb52b" value="1" />Yes<input type="radio" name="rb52b" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">7</td><td width="5%"></td><td width="22%">Act 28/2002 (Mining)</td><td width="18%"><ul><li><input type="radio" name="rb7" value="1" />Yes<input type="radio" name="rb7" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">8</td><td width="5%"></td><td width="22%">Act 24/2008 (ICM)</td><td width="18%"><ul><li><input type="radio" name="rb8" value="1" />Yes<input type="radio" name="rb8" value="0" checked="checked" />No</li></ul></td><td width="5%">53</td><td width="5%">a</td><td width="22%">Dgm Rej	</td><td width="18%"><ul><li><input type="radio" name="rb53a" value="1" />Yes<input type="radio" name="rb53a" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">9</td><td width="5%"></td><td width="22%">Component lines </td><td width="18%"><ul><li><input type="radio" name="rb9" value="1" />Yes<input type="radio" name="rb9" value="0" checked="checked" />No</li></ul></td><td width="5%">53</td><td width="5%">b</td><td width="22%">Dgm Approved	</td><td width="18%"><ul><li><input type="radio" name="rb53b" value="1" />Yes<input type="radio" name="rb53b" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">10</td><td width="5%"></td><td width="22%">Sect  33 or 34 of Act 8/1997</td><td width="18%"><ul><li><input type="radio" name="rb10" value="1" />Yes<input type="radio" name="rb10" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">11</td><td width="5%"></td><td width="22%">Type of diagram</td><td width="18%"><ul><li><input type="radio" name="rb11" value="1" />Yes<input type="radio" name="rb11" value="0" checked="checked" />No</li></ul></td><td colspan="4" class="docCategory">Registry</td></tr>
+                    <tr><td width="5%">12</td><td width="5%"></td><td width="22%">Survey report.</td><td width="18%"><ul><li><input type="radio" name="rb12" value="1" />Yes<input type="radio" name="rb12" value="0" checked="checked" />No</li></ul></td><td width="5%">55</td><td width="5%"></td><td width="22%">Returned for amendment.	</td><td width="18%"><ul><li><input type="radio" name="rb55" value="1" />Yes<input type="radio" name="rb55" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">13</td><td width="5%"></td><td width="22%">Sufficient remainder/Area calc</td><td width="18%"><ul><li><input type="radio" name="rb13" value="1" />Yes<input type="radio" name="rb13" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Dgm no's.	</td><td width="18%"><ul><li><input type="radio" name="rb" value="1" />Yes<input type="radio" name="rb" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">15</td><td width="5%"></td><td width="22%">Scale and plot</td><td width="18%"><ul><li><input type="radio" name="rb15" value="1" />Yes<input type="radio" name="rb15" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Date	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">16</td><td width="5%"></td><td width="22%">Cert, date and sign</td><td width="18%"><ul><li><input type="radio" name="rb16" value="1" />Yes<input type="radio" name="rb16" value="0" checked="checked" />No</li></ul></td><td width="5%">56</td><td width="5%"></td><td width="22%">Relodged	</td><td width="18%"><ul><li><input type="radio" name="rb56" value="1" />Yes<input type="radio" name="rb56" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">17</td><td width="5%"></td><td width="22%">Adjoining data</td><td width="18%"><ul><li><input type="radio" name="rb17" value="1" />Yes<input type="radio" name="rb17" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Dgm no's	</td><td width="18%"><ul><li><input type="radio" name="rb" value="1" />Yes<input type="radio" name="rb" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">18</td><td width="5%"></td><td width="22%">Boundary descriptions</td><td width="18%"><ul><li><input type="radio" name="rb18" value="1" />Yes<input type="radio" name="rb18" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Date.	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">19</td><td width="5%"></td><td width="22%">Road/P Place closure</td><td width="18%"><ul><li><input type="radio" name="rb19" value="1" />Yes<input type="radio" name="rb19" value="0" checked="checked" />No</li></ul></td><td width="5%">57</td><td width="5%"></td><td width="22%">Appr dgms despatched	</td><td width="18%"><ul><li><input type="radio" name="rb57" value="1" />Yes<input type="radio" name="rb57" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">20</td><td width="5%"></td><td width="22%">Existing beacon agreement</td><td width="18%"><ul><li><input type="radio" name="rb20" value="1" />Yes<input type="radio" name="rb20" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Dgm no's	</td><td width="18%"><ul><li><input type="radio" name="rb" value="1" />Yes<input type="radio" name="rb" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">21</td><td width="5%"></td><td width="22%">Ref to original.</td><td width="18%"><ul><li><input type="radio" name="rb21" value="1" />Yes<input type="radio" name="rb21" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Date	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">22</td><td width="5%"></td><td width="22%">Office column</td><td width="18%"><ul><li><input type="radio" name="rb22" value="1" />Yes<input type="radio" name="rb22" value="0" checked="checked" />No</li></ul></td><td width="5%">58</td><td width="5%"></td><td width="22%">Received by:	</td><td width="18%"><ul><li><input type="radio" name="rb58" value="1" />Yes<input type="radio" name="rb58" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">23</td><td width="5%"></td><td width="22%">Designation</td><td width="18%"><ul><li><input type="radio" name="rb23" value="1" />Yes<input type="radio" name="rb23" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Date	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">24</td><td width="5%"></td><td width="22%">Situation.</td><td width="18%"><ul><li><input type="radio" name="rb24" value="1" />Yes<input type="radio" name="rb24" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">25</td><td width="5%"></td><td width="22%">True North</td><td width="18%"><ul><li><input type="radio" name="rb25" value="1" />Yes<input type="radio" name="rb25" value="0" checked="checked" />No</li></ul></td><td colspan="4" class="docCategory">Post Approval P#No</td></tr>
+                    <tr><td width="5%">26</td><td width="5%"></td><td width="22%">Description of figure</td><td width="18%"><ul><li><input type="radio" name="rb26" value="1" />Yes<input type="radio" name="rb26" value="0" checked="checked" />No</li></ul></td><td width="5%">59</td><td width="5%"></td><td width="22%">Spatial updated.	</td><td width="18%"><ul><li><input type="radio" name="rb59" value="1" />Yes<input type="radio" name="rb59" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">27</td><td width="5%"></td><td width="22%">Noted on Original</td><td width="18%"><ul><li><input type="radio" name="rb27" value="1" />Yes<input type="radio" name="rb27" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Checked.	</td><td width="18%"><ul><li><input type="radio" name="rb" value="1" />Yes<input type="radio" name="rb" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">29</td><td width="5%"></td><td width="22%">Original dgm redesignated</td><td width="18%"><ul><li><input type="radio" name="rb29" value="1" />Yes<input type="radio" name="rb29" value="0" checked="checked" />No</li></ul></td><td width="5%">60</td><td width="5%"></td><td width="22%">Noting done	</td><td width="18%"><ul><li><input type="radio" name="rb60" value="1" />Yes<input type="radio" name="rb60" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">30</td><td width="5%"></td><td width="22%">Entered in schedule</td><td width="18%"><ul><li><input type="radio" name="rb30" value="1" />Yes<input type="radio" name="rb30" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">Noting shts	</td><td width="18%"><ul><li><input type="radio" name="rb" value="1" />Yes<input type="radio" name="rb" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">32</td><td width="5%"></td><td width="22%">Serv:  Existing</td><td width="18%"><ul><li><input type="radio" name="rb32" value="1" />Yes<input type="radio" name="rb32" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%"></td><td width="5%"></td><td width="22%">           New</td><td width="18%"></td><td width="5%"></td><td width="5%"></td><td width="22%">Checked	</td><td width="18%"><ul><li><input type="radio" name="rb" value="1" />Yes<input type="radio" name="rb" value="0" checked="checked" />No</li></ul></td></tr>
+                    <tr><td width="5%">34</td><td width="5%"></td><td width="22%">Compared with GP</td><td width="18%"><ul><li><input type="radio" name="rb34" value="1" />Yes<input type="radio" name="rb34" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">35</td><td width="5%"></td><td width="22%">Dummy trip prepared</td><td width="18%"><ul><li><input type="radio" name="rb35" value="1" />Yes<input type="radio" name="rb35" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">36</td><td width="5%"></td><td width="22%">New beacon agreement </td><td width="18%"><ul><li><input type="radio" name="rb36" value="1" />Yes<input type="radio" name="rb36" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">43</td><td width="5%"></td><td width="22%">Co-ord system and constant checked </td><td width="18%"><ul><li><input type="radio" name="rb43" value="1" />Yes<input type="radio" name="rb43" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">44</td><td width="5%"></td><td width="22%">Description of beacons given</td><td width="18%"><ul><li><input type="radio" name="rb44" value="1" />Yes<input type="radio" name="rb44" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">45</td><td width="5%">a</td><td width="22%">Caveat.</td><td width="18%"><ul><li><input type="radio" name="rb45a" value="1" />Yes<input type="radio" name="rb45a" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+                    <tr><td width="5%">45</td><td width="5%">b</td><td width="22%">Endorsement Tracking</td><td width="18%"><ul><li><input type="radio" name="rb45b" value="1" />Yes<input type="radio" name="rb45b" value="0" checked="checked" />No</li></ul></td><td width="5%"></td><td width="5%"></td><td width="22%">	</td><td width="18%"></td></tr>
+
+                </table>
+            </div>
+            <div class="content-section" data-title="Survey Docket" data-description="Survey Docket" style="min-height:100px;">
+                <div class="SurveyTable">
+                    <table width="90%" class="SurveyTable" id="SurveyTable">
+                        <tr class="docCategory">
+                            <td colspan="3">General</td>
+                            <td>Initial</td>
+                            <td>Notes</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Report</td>
+                            <td></td>
+                            <td><ul><li><input type="radio" name="rbs1" value="1" />Yes<input type="radio" name="rbs1" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt1" /> </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Co-ordinate List</td>
+                            <td></td>
+                            <td><ul><li><input type="radio" name="rbs2" value="1" />Yes<input type="radio" name="rbs2" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt2" /> </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Workingplan:</td>
+                            <td>Heading</td>
+                            <td><ul><li><input type="radio" name="rbs3_H" value="1" />Yes<input type="radio" name="rbs3_H" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt3_H" /> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Certificate</td>
+                            <td><ul><li><input type="radio" name="rbs3_C" value="1" />Yes<input type="radio" name="rbs3_C" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt3_C" /> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Signature</td>
+                            <td><ul><li><input type="radio" name="rbs3_S" value="1" />Yes<input type="radio" name="rbs3_S" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt3_S" /> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Dated</td>
+                            <td><ul><li><input type="radio" name="rbs3_D" value="1" />Yes<input type="radio" name="rbs3_D" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt3_D" /> </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Adjoining data</td>
+                            <td></td>
+                            <td><ul><li><input type="radio" name="rbs4" value="1" />Yes<input type="radio" name="rbs4" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt4" /> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="docCategory">Normal Survey</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td colspan="2">Field book</td>
+                            <td><ul><li><input type="radio" name="rbs5" value="1" />Yes<input type="radio" name="rbs5" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt5" /> </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td colspan="2">Beacon description given on co-ord list/W P </td>
+                            <td><ul><li><input type="radio" name="rbs6" value="1" />Yes<input type="radio" name="rbs6" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt6" /> </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td colspan="2">Comparison of data</td>
+                            <td><ul><li><input type="radio" name="rbs7" value="1" />Yes<input type="radio" name="rbs7" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt7" /> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="docCategory">Sectional-Title Survey</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Field Plans:</td>
+                            <td>Dated</td>
+                            <td><ul><li><input type="radio" name="rbs8_D" value="1" />Yes<input type="radio" name="rbs8_D" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt8_D" /> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Signed</td>
+                            <td><ul><li><input type="radio" name="rbs8_S" value="1" />Yes<input type="radio" name="rbs8_S" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt8_S" /> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>True North</td>
+                            <td><ul><li><input type="radio" name="rbs8_T" value="1" />Yes<input type="radio" name="rbs8_T" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt8_T" /> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Ceiling Heights</td>
+                            <td><ul><li><input type="radio" name="rbs8_C" value="1" />Yes<input type="radio" name="rbs8_C" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt8_C" /> </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Median Plans: </td>
+                            <td>True North</td>
+                            <td><ul><li><input type="radio" name="rbs9_T" value="1" />Yes<input type="radio" name="rbs9_T" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt9_T" /> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Distances</td>
+                            <td><ul><li><input type="radio" name="rbs9_D" value="1" />Yes<input type="radio" name="rbs9_D" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt9_D" /> </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Areas</td>
+                            <td></td>
+                            <td><ul><li><input type="radio" name="rbs10" value="1" />Yes<input type="radio" name="rbs10" value="0" checked="checked" />No</li></ul></td>
+                            <td><input type="text" name="txt10" /> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="docCategory">Further Notes</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td colspan="3">Beacons found and adopted:</td>
+                            <td><input type="text" name="txt11" /> </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td colspan="3">Beacons found and not rejected:</td>
+                            <td><input type="text" name="txt12" /> </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td colspan="3">Beacons found and rejected:</td>
+                            <td><input type="text" name="txt13" /> </td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td colspan="3">New Beacons placed:</td>
+                            <td><input type="text" name="txt14" /> </td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td colspan="3">Replaced Beacons:</td>
+                            <td><input type="text" name="txt15" /> </td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td colspan="3">Established Beacons:</td>
+                            <td><input type="text" name="txt16_1" /> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="3">Established Boundaries:</td>
+                            <td><input type="text" name="txt16_2" /> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="docCategory">Stats of Survey</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td colspan="3">Date Returned:</td>
+                            <td><input type="text" name="txt17" /> </td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td colspan="3">Date Approved:</td>
+                            <td><input type="text" name="txt18" /> </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="content-section" data-title="> Supporting Document" data-description="> Supporting Document">
+                <br />
+                <table id="MainForm_Documents1_TblDocuments" cellspacing="0" cellpadding="5" style="font-size:0.9em;border-collapse:collapse;margin:20px;">
+                    <tbody>
+                        <tr class="ItemTitle">
+                            <th>#</th>
+                            <th style="width:70px;">Date</th>
+                            <th>Type</th>
+                            <th style="width:70px;">Context</th>
+                            <th style="width:70px;">Source</th>
+                            <th style="width:70px;">View</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td align="center">28/06/2016</td>
+                            <td align="center">SG Digram</td>
+                            <td style="padding-left:20px;">Subdivision</td>
+                            <td style="padding-left:20px;">User1</td>
+                            <td align="center"><a href="#">Open</a> </td>
+                        </tr>
+                        <tr class="AlterNativeRow">
+                            <td>2</td>
+                            <td align="center">28/06/2016</td>
+                            <td align="center">SG Digram</td>
+                            <td style="padding-left:20px;">Subdivision</td>
+                            <td style="padding-left:20px;">User1</td>
+                            <td align="center"><a href="#">Open</a> </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td align="center">28/06/2016</td>
+                            <td align="center">SG Digram</td>
+                            <td style="padding-left:20px;">Subdivision</td>
+                            <td style="padding-left:20px;">User1</td>
+                            <td align="center"><a href="#">Open</a> </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="content-section" data-title="> Audit Trail" data-description=">  Audit Trail">
+
+                <table id="MainScreen_Process1_tblHistory" class="grid-view" style="width:90%; float:left;">
+                    <tbody>
+                        <tr class="grid-header">
+                            <td>Date</td>
+                            <td>User</td>
+                            <td>Action</td>
+                            <td style="width:50px;">Duration</td>
+                        </tr>
+                        <tr style="background-color:LightGrey;">
+                            <td>12/05/2016 09:28</td>
+                            <td>Arvind Prasad</td>
+                            <td>Confirm Numeric Data and generate dockets</td>
+                            <td>Pending since: 3.06 months</td>
+                        </tr>
+                        <tr>
+                            <td>12/05/2016 09:28</td>
+                            <td>User1</td>
+                            <td>Register Lodgements onto the database</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>12/05/2016 09:28</td>
+                            <td>User1</td>
+                            <td>Electronically Lodge Documents</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer>
+        <div id="product-branding" style="float:right;cursor:hand;" onclick="window.open('http://www.dataworld.co.za');">
+            <div>© Data World 2016</div>
+        </div>
+        <div class="screen-container">
+            <ul id="tool-bar">
+                <li class="tool butt-no-color seperator" data-title="Light">
+                    <img alt="Context" src="../Common/Images/bulb-icon.png" onclick="Toggle(ContextPanel);" />
+                </li>
+
+                <!--<li class="indicator" data-title="Application Pending since">
+                    <label>
+                        12 days
+                    </label>
+                </li>-->
+                <li class="tool" data-title="Done">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/check.png" onclick="Navigate3('Examination4_1.xhtml');" />
+                </li>
+
+                <li class="tool butt-green-color" data-title="Save">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/Save.png" />
+                </li>
+                <li class="tool butt-red-color" data-title="Back">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/Back.png" onclick="Navigate3('Inbox.xhtml');" />
+                </li>
+
+                <li style="clear: both;"></li>
+
+            </ul>
+            <div id="ContextPanel" class="context" style="display:none">
+
+
+                <h2 style="padding-top:50px;">Business Context</h2>
+                <table style="width:90%;">
+                    <tbody>
+                        <tr>
+
+                            <td class="current-step shadow">
+                                <label>1.4 Perform Technical Examination</label>
+
+                                <p>
+                                    a) Notes may be captured for each check item on the docket<br />
+                                    b) Capturing of notes per item is not mandatory. A docket item may be without a note;<br />
+                                    c) Lineage with regards to the batch number, and the document types , document numbers within the batch need to be accessible and searchable;<br />
+                                    d) Audit trails are kept at all times i.e. (on Create, Update and Delete);<br />
+                                    e) The database is updated all the time when a change happens;<br />
+                                </p>
+
+                                <p></p>
+
+                            </td>
+                            <td class="arrow">
+                                <img src="../Common/Images/next-step-arrow.png" />
+                            </td>
+                            <td class="next-step">
+                                <label><br /><br />1.4.1 Perform Technical Examination<br /><br /><font size="2px">Examiner</font><br /></label>
+
+                                <p></p>
+
+                            </td>
+                        </tr>
+                        <!--<tr id="ContextHelp_Context1_FailedStepPanel">
+                            <td class="failed-step shadow">
+                                <label></label>
+
+                                <p></p>
+                            </td>
+                        </tr>-->
+
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </footer>
+    <script>
+        LoadSections();
+    </script>
+</body>
+</html>

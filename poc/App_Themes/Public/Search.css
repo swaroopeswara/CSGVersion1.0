@@ -1,0 +1,119 @@
+﻿
+.search-panel {
+    padding: 0 30px 50px 30px;
+}
+
+    .search-panel .search-caption {
+        margin-bottom: 5px;
+    }
+
+    .search-panel .search-filter {
+        font-weight: 900;
+        padding: 0 10px 0 10px;
+        border: none;
+    }
+
+    .search-panel .help-link {
+        content: attr(data-title);
+        font-style: italic;
+        display: block;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding-top: 10px;
+        width:300px;
+    }
+        
+
+    .search-panel .filter-list {
+        width: 250px;
+        float: left;
+        list-style-type: decimal-leading-zero;
+        background-color: #0A2D6D;
+        color: white;
+        opacity: 0.8;
+        font-size: 0.8em;
+        height: 170px;
+        margin-left: 20px;
+    }
+
+        .search-panel .filter-list:hover {
+            opacity: 1;
+        }
+
+        .search-panel .filter-list[data-title]:before {
+            display: block;
+            content: attr(data-title);
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        .search-panel .filter-list li {
+            padding: 5px;
+            cursor: pointer;
+            font-style: italic;
+        }
+
+            .search-panel .filter-list li:hover {
+                color: #FAD228;
+            }
+
+
+
+.result-list {
+    list-style-type: upper-alpha;
+    font-size: 0.7em;
+}
+
+    .result-list li {
+        margin: 10px;
+        opacity: 0.7;
+        width: 150px;
+        float: left;
+        padding: 5px;
+        border: 1px dotted gray;
+    }
+
+        .result-list li a {
+            display: block;
+            font-weight: 900;
+            font-size: 1.2em;
+        }
+
+    .result-list .summary {
+        margin: 5px 0 10px 0;
+    }
+
+    .result-list .detail {
+        background-color: black;
+        padding: 5px;
+        color: white;
+        font-style: italic;
+        display: none;
+    }
+
+    .result-list .summary:hover {
+        opacity: 1;
+    }
+
+
+
+
+    .result-list .key-highlight {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .result-list p {
+        font-style: italic;
+        font-size: 0.8em;
+        padding: 10px;
+    }
+
+    .result-list label {
+        font-weight: bold;
+        padding: 5px;
+    }

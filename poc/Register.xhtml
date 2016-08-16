@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIS- Register</title>
+    <link href="App_Themes/Public.css" rel="stylesheet" />
+    <script src="Common/Scripts/Common.js"></script>
+    <script src="Common/Scripts/jquery-1.9.1.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <style type="text/css">
+      
+        #form input.error {
+            border: 1px solid red;
+        }
+
+        label.error {
+            color: red;
+            padding: 1px 2px 1px 2px;
+        }
+
+        input.radio {
+            float: left;
+        }
+    </style>
+    <script type="text/javascript">
+        /* Fire Validate */
+        $(document).ready(function () {
+            $("#form").validate({    
+                rules: {
+                    TxName: {
+                        required: true
+                    },
+                    TxEmail: {
+                        required: true,
+                        email: true
+                    },
+                    TxPLS: {
+                        required: true
+                    }
+                },
+                messages: {
+                    TxName: "",
+                    TxEmail: {
+                        required: "",
+                        email: "Invalid email"
+                    },
+                    TxPLS: ""
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="form" action="">
+        <header>
+            <div class="form-container">
+                <table style="width:100%;">
+                    <tr>
+                        <td>
+                            <a href="Home.xhtml" title="Home" style="text-decoration:none;border:0;"><img class="LeftLogo" src="Common/Images/DRDLR_GREEN.png" /></a>
+                            <font class="Title">Cadastral Information System</font>
+                        </td>
+                        <td>
+                            <a href="Home.xhtml" title="Home" style="text-decoration:none;border:0;"><img src="Common/Images/Logo.png" /></a>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+        </header>
+        <div class="form-container registration-form" style="padding-top:15px; background-color:#F5F1E8">
+
+            <div style="clear: both;vertical-align:top;"></div>
+            <div style="min-height:400px;">
+                <table style="width:100%;">
+                    <tr>
+                        <td style="vertical-align:top;">
+                            <div id="PanRegistration">
+
+                                <h2>Account Request Form</h2>
+                                <div id="RegistrationPanel">
+                                    <ul>
+                                        <li>
+                                            <div>
+                                                Role
+                                            </div>
+                                            <input type="radio" name="role" value="1" checked="checked" /> Land Surveyor<br />
+                                            <input type="radio" name="role" value="1" /> Registery Clerk<br />
+                                            <input type="radio" name="role" value="2" /> Data Capture<br />
+                                            <input type="radio" name="role" value="3" /> Examiner<br />
+                                            <input type="radio" name="role" value="5" /> Professional Assistant (PA)<br />
+                                            <input type="radio" name="role" value="6" /> Information Officer<br />
+                                            <input type="radio" name="role" value="6" /> Information Requestor<br />
+                                            <input type="radio" name="role" value="6" /> Workflow Admin<br />
+                                            <input type="radio" name="role" value="6" /> System Admin<br />
+                                        </li>
+                                        <li>
+                                            <div>
+                                                Name
+                                                <label for="name">Name</label>
+                                            </div>
+                                            <input type="text" name="TxName" id="TxName" />
+                                        </li>
+
+                                        <li>
+                                            <div>
+                                                Email Address
+                                            </div>
+                                            <input type="text" name="TxEmail" id="TxEmail" />
+                                        </li>
+
+                                        <li>
+                                            <div>
+                                               User name
+                                            </div>
+                                            <input type="text" name="TxPLS" id="TxPLS" />
+                                        </li>
+                                        <li>
+                                            <div>
+                                                PLS Number
+                                            </div>
+                                            <input type="text" name="TxPLS" id="TxPLS" />
+                                        </li>
+                                  
+                                        <li>
+                                            <div>
+                                                Password
+                                            </div>
+                                            <input type="password" name="TxPassword" id="TxPassword" />
+                                        </li>
+                                        <li>
+                                            <div>
+                                               Confirm Password
+                                            </div>
+                                            <input type="password" name="TxPasswordCon" id="TxPasswordCon" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="clear: both; float:right; margin-right:110px;">
+
+                                    <!--<img id="ImageButton3" style="margin: 5px;" tooltip="Click here to send request for Email Verification" imagealign="Right" src="Common/Images/Black/mail.png" width="36" type="Submit" />-->
+
+                                    <input type="image" id="ImageButton4" style="margin: 5px;" src="Common/Images/Black/mail.png" title="Click here to send request for Email Verification" width="36"/>
+                                    <!--<img id="ImageButton1" style="margin: 5px;" tooltip="Click here to Exit and Go Back" imagealign="Right" src="Common/Images/Black/back.png" width="36" onclick="Navigate2('Home.html');" />-->
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="clear: both; padding-top: 10px; border-top: 1px dotted gray; margin-top: 30px; margin-top:0px;">
+                <img id="ImageButton2" tooltip="Click here to go back" imagealign="Left" width="36" src="Common/Images/Black/back.png" onclick="Navigate2('Home.xhtml');" />
+
+                <div id="SearchTip" style="margin-top: 50px; font-weight: 300; font-style: italic; width: 50%; float: right; line-height: 1.5;">
+                    If you wish to search using other criterion like SG Number, Workflow Tasks, ERF or Farm Description, please <a href="Register.xhtml" onclick="Navigate2('Register.xhtml');">Register</a>
+                </div>
+
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <footer>
+
+            <div id="product-branding" style="float:right;cursor:hand;" onclick="window.open('http://www.dataworld.co.za');">
+                <div>© Data World 2016</div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

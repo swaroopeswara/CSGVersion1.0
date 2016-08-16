@@ -1,0 +1,300 @@
+﻿body {
+    font-family: Helvetica,Arial, Sans-Serif;
+    font-size: 10pt;
+    top: 0px;
+    left: 0px;
+    background-color: #C1B071;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.form-container {
+    width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registration-form {
+    margin-top: 90px;
+    border: 1px dotted gray;
+    padding: 20px;
+    font-size: 0.9em;
+    background-color: white;
+}
+
+    .registration-form:after {
+        display: block;
+        content: ' ';
+        clear: both;
+    }
+
+    .registration-form ul {
+        list-style-type: none;
+    }
+
+    .registration-form div {
+        font-weight: bold;
+        margin: 10px 0 5px 0;
+    }
+
+    .registration-form li {
+        width: 250px;
+        float: left;
+        margin-top: 10px;
+    }
+
+    .registration-form .mug-shot {
+        cursor: pointer;
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    }
+
+    .Title{
+         font-size: 14pt;
+         color:black;
+         margin-top:30px;
+    }
+
+.highlight {
+    padding: 3px 5px 3px 5px;
+    font-size: 0.5em;
+    background-color: yellow;
+    text-align: center;
+    display: block;
+}
+
+.attribute-container {
+    list-style-type: none;
+    font-weight: 300;
+    width: 580px;
+    float: left;
+}
+
+.map-small {
+   
+    border:1px solid gray;
+    padding:5px;
+    float:right;
+    overflow :hidden;
+}
+
+    .map-small img {
+         width: 200px;
+         height:200px;
+    }
+
+        .map-small:after {
+            content:'Property Location';
+            display:block;
+            font-size:0.9em;
+            font-style :italic;
+            font-weight:normal ;
+            text-align :center ;
+        }
+
+.attribute-container li {
+    padding: 0;
+    float: left;
+    width: 280px;
+}
+
+    .attribute-container li label {
+        font-size: 0.9em;
+        font-style: italic;
+        padding-bottom: 3px;
+        display: block;
+        margin-left: -10px;
+    }
+
+
+
+header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: white;
+    color: black;
+    width: 100%;
+    /*opacity: 0.6;*/
+    font-size: 2.4em;
+    font-weight: 900;
+    border-bottom: outset thin;
+    z-index: 100;
+    color: #0A2D6D;
+}
+
+    header:hover {
+        opacity: 1;
+    }
+
+    header .system-name {
+        font-size: 0.8em;
+        color: gray;
+        text-align: right;
+        margin-right: 10px;
+        position:relative;
+        top:-20px;
+         width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+        
+    }
+
+   .LeftLogo {
+        margin: 5px;
+        float: left;
+        width: 250px;
+    }
+
+nav {
+    margin-top: 90px;
+    z-index: 90;
+}
+
+    nav ul {
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    nav li {
+        float: left;
+        width: 228px;
+        padding: 20px;
+        margin-right: 10px;
+        background-color: #005d28;
+        color: #ffffff;
+        height: 50px;
+        overflow: hidden;
+        /*opacity: 0.6;*/
+        border: outset 1px;
+        cursor: pointer;
+        text-shadow: 0px 1px 0px rgba(0,0,0,0.7);
+        font-weight: normal;
+    }
+
+        nav li .slide {
+            width: auto;
+            margin-top: 40px;
+            /*opacity: 0.6;*/
+            height: 100px;
+            border: 1px solid gray;
+            padding: 5px;
+            float: right;
+        }
+
+        nav li:hover {
+            height: auto;
+            opacity: 1;
+            -webkit-transition: height 3s; /* Safari 3.1 to 6.0 */
+            transition: height 3s;
+        }
+
+    nav img {
+        vertical-align: middle;
+    }
+
+    nav p {
+        font-style: italic;
+        padding: 15px 5px 5px 15px;
+    }
+
+    nav .link {
+        font-weight: 900;
+        font-size: 1.6em;
+        vertical-align: middle;
+        float: right;
+        color: #ffffff;
+    }
+
+
+#DocumentLibrary {
+    /*background-color: #FAD228;*/
+    /*color: white;*/
+    background-color: #F5F1E8;
+    color: rgba(0, 0, 0, .8);
+    padding: 30px;
+    margin-top: 5px;
+    /*opacity: 0.5;*/
+    margin-bottom: 130px;
+    margin-right: 10px;
+    z-index: 80;
+}
+
+    #DocumentLibrary:hover {
+        opacity: 1;
+    }
+
+    #DocumentLibrary ul {
+        list-style-type: decimal-leading-zero;
+        margin-left: 50px;
+    }
+
+    #DocumentLibrary li {
+        /*width: 300px;*/
+        float: left;
+        margin: 5px;
+    }
+
+
+
+        #DocumentLibrary li p {
+            margin: 5px;
+            font-style: italic;
+            font-size: 0.8em;
+            font-weight: normal;
+            color: gray;
+        }
+
+
+        #DocumentLibrary li label {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+            #DocumentLibrary li label:hover {
+                color: #0A2D6D;
+                cursor: pointer;
+            }
+
+footer {
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+     background-color: #005d28;
+        color: #ffffff;
+    opacity: 0.9;
+  
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    z-index: 1000;
+}
+
+    footer:hover {
+        opacity: 1;
+    }
+
+    footer p {
+        font-size: 0.9em;
+        font-weight: 100;
+        font-style: italic;
+    }

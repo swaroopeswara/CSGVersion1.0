@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIS- Verification</title>
+    <link href="../App_Themes/Avant/Content.css" rel="stylesheet" />
+    <link href="../App_Themes/Avant/Layout.css" rel="stylesheet" />
+
+    <script src="../Common/Scripts/Common.js"></script>
+    <script src="../Common/Scripts/jquery-1.9.1.js"></script>
+    <script src="../Common/Scripts/jquery.autocomplete.min.js"></script>
+    <script src="../Common/Scripts/TaskPage.js"></script>
+
+    
+
+</head>
+<body>
+    <header>
+
+        <img src="../Common/Images/DRDLR_GREEN.png" class="site-logo" />
+        <div class="screen-container">
+            <div id="site_name">
+                Cadastral Information System
+            </div>
+            <div id="screen_title">
+                <div id="FormTitle">
+                    Register Lodgements onto the database
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div data-title="Help">
+            <img src="../Common/Images/Black/questionmark.png"
+                 onclick="Navigate3('');" />
+        </div>
+        <div data-title="Search">
+            <img src="../Common/Images/Black/search.png"
+                 onclick="Navigate3('');" />
+
+
+        </div>
+        <div data-title="Inbox">
+            <img src="../Common/Images/Black/folder.png"
+                 onclick="Navigate3('Inbox.xhtml');" />
+        </div>
+
+        <div data-title="Map">
+            <img src="../Common/Images/Black/flag.png"
+                 onclick="Navigate3('');" />
+        </div>
+
+
+
+    </nav>
+
+    <aside id="SectionListPanel"></aside>
+
+    <div id="widget-container">
+        <div class="widget">
+            <img onclick="Navigate2('');" src="../Common/Images//Exit.png" style="width: 20px;" title="Click here to Logout" />
+            <div onclick="Navigate2('');">
+                <span style="cursor: pointer; color: #FAD228; font-size: 1.1em;">
+                    <span id="LbUserName" title="Click here to edit preferences " style="font-weight:bold;">User1</span>
+                </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div id="Widgets">
+            <div class="widget" data-title="Action">
+                <img onclick="WidgetContain(ApplicationPanel);" src="../Common/Images/White/edit.png" />
+                <div style="clear: both;"></div>
+                <div class="expansion-panel" id="ApplicationPanel" style="display: block;">
+                    <ul class="input-form" style="width: 10px;">
+                        <li>
+                            <label>
+                                User to Assign
+                            </label>
+                            <select name="ctl00$Widgets$ddlUser" id="Widgets_ddlUser" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;">
+                                <option value="4">Admin User4</option>
+                                <option value="171">asd@a.com</option>
+                                <option value="157">PKS2</option>
+                                <option value="170">SD</option>
+
+                            </select>
+                        </li>
+                        <li>
+                            <label>
+                                Note
+                            </label>
+                            <textarea name="TxtNote" rows="4" cols="13" id="Widgets_txtDWADFNote" onkeydown="AutoExpand(this,7);" bordersize="1" fontsize="Larger" style="border-color:Gray;border-style:Solid;font-family:Lucida Console;padding:5px;"></textarea>
+                        </li>
+
+                    </ul>
+                    <div style="clear: both;"></div>
+                </div>
+
+
+
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="screen-container main-page">
+
+        <div class="content">
+
+            <div>
+                <table class="kpi-container" data-title="Task header">
+                    <tbody>
+                        <tr>
+                            <td>
+                                REF#
+                                <div>
+                                    <span id="MainScreen_lblRef">140</span>
+                                </div>
+                            </td>
+                            <td>
+                                Process Name
+                                <div>
+                                    <span id="MainScreen_lblProcessName">Lodgement- Subdivision</span>
+                                </div>
+                            </td>
+                            <td>
+                                Posted
+                                <div>
+                                    <span id="MainScreen_lblPostedOn">3 hour back</span>
+                                </div>
+                            </td>
+                            <td>
+                                On
+                                <div>
+                                    <span id="MainScreen_lblPostedOn">ERF 1317 of WINGATE PARK</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section" data-title="Application Details" data-description="Application Details">
+                <ul class="input-form">
+                    <li>
+                        <label>Province</label>
+                        <span>Gauteng</span>
+                    </li>
+
+                    <li>
+                        <label>ERF</label>
+
+                        <span>120</span>
+
+                    </li>
+
+
+
+                    <li>
+                        <label>Township</label>
+
+                        <span>WINGATE PARK</span>
+
+                    </li>
+
+
+                </ul>
+                <div style="padding-left:20px;">
+                    <h4>Batch Number: 0001/2016</h4>
+                    <h4>SG Numbers</h4>
+                    <table style="width:80%;">
+                        <tr class="ItemTitle">
+                            <td>#</td>
+                            <td>SG Number</td>
+                            <td>Type</td>
+                            <td>Description</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>SR00001/2016</td>
+                            <td>Parent</td>
+                            <td>
+                                ERF 317 of WINGATE PARK
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>SR00002/2016</td>
+                            <td>Child</td>
+                            <td>
+                                Portion 1 of ERF 317 of WINGATE PARK
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+       
+            <div class="content-section" data-title="Supporting Document" data-description="Supporting Document">
+                <br/>
+                <table id="MainForm_Documents1_TblDocuments" cellspacing="0" cellpadding="5" style="font-size:0.9em;border-collapse:collapse;margin:20px;">
+                    <tbody>
+                        <tr class="ItemTitle">
+                            <th>#</th>
+                            <th style="width:70px;">Date</th>
+                            <th>Type</th>
+                            <th style="width:70px;">Context</th>
+                            <th style="width:70px;">Source</th>
+                            <th style="width:70px;">View</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td align="center">28/06/2016</td>
+                            <td align="center">SG Digram</td>
+                            <td style="padding-left:20px;">Subdivision</td>
+                            <td style="padding-left:20px;">User1</td>
+                            <td align="center"><a href="#">Open</a> </td>
+                        </tr>
+                        <tr class="AlterNativeRow">
+                            <td>2</td>
+                            <td align="center">28/06/2016</td>
+                            <td align="center">SG Digram</td>
+                            <td style="padding-left:20px;">Subdivision</td>
+                            <td style="padding-left:20px;">User1</td>
+                            <td align="center"><a href="#">Open</a> </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td align="center">28/06/2016</td>
+                            <td align="center">SG Digram</td>
+                            <td style="padding-left:20px;">Subdivision</td>
+                            <td style="padding-left:20px;">User1</td>
+                            <td align="center"><a href="#">Open</a> </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="content-section" data-title="Acknowledgement Letter Download" data-description="Acknowledgement Letter Download" style="min-height:100px;">
+                <div id="dContactDetails">
+                    <div class="inset-pad inset-pad">
+                        <span style="text-align:left;padding-left:100px;"><a target='_blank' href='../Documents/Sample/AcknowledgementLetter.pdf'><img style="width: 40px; height: 40px;" src="../Common/Images/Black/download.png" /></a></span>
+                        <div style="margin: 0 30px; ">
+                            <p style="font-style: italic; margin:20px; line-height:2;">Click on the Download button on the above.<br />If you make any changes to this document please upload the new version into the system</p>
+                        </div>
+
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="content-section" data-title="> Audit Trail" data-description=">  Audit Trail">
+
+                <table id="MainScreen_Process1_tblHistory" class="grid-view" style="width:90%; float:left;">
+                    <tbody>
+                        <tr class="grid-header">
+                            <td>Date</td>
+                            <td>User</td>
+                            <td>Action</td>
+                            <td style="width:50px;">Duration</td>
+                        </tr>
+                        <tr style="background-color:LightGrey;">
+                            <td>12/05/2016 09:28</td>
+                            <td>Arvind Prasad</td>
+                            <td>Register Lodgements onto the database</td>
+                            <td>Pending since: 3.06 months</td>
+                        </tr>
+                        <tr>
+                            <td>12/05/2016 09:28</td>
+                            <td>User1</td>
+                            <td>Electronically Lodge Documents</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer>
+        <div id="product-branding" style="float:right;cursor:hand;" onclick="window.open('http://www.dataworld.co.za');">
+            <div>© Data World 2016</div>
+        </div>
+        <div class="screen-container">
+            <ul id="tool-bar">
+                <li class="tool butt-no-color seperator" data-title="Light">
+                    <img alt="Context" src="../Common/Images/bulb-icon.png" onclick="Toggle(ContextPanel);" />
+                </li>
+
+                <!--<li class="indicator" data-title="Application Pending since">
+                    <label>
+                        12 days
+                    </label>
+                </li>-->
+                <li class="tool" data-title="Done">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/check.png" onclick="Navigate3('DataCapture3.xhtml');" />
+                </li>
+
+                <li class="tool butt-green-color" data-title="Save">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/Save.png" />
+                </li>
+                <li class="tool butt-red-color" data-title="Back">
+                    <img id="ImageButton2"
+                         src="../Common/Images/White/Back.png" onclick="Navigate3('Inbox.xhtml');" />
+                </li>
+
+                <li style="clear: both;"></li>
+
+            </ul>
+            <div id="ContextPanel" class="context" style="display:none">
+
+
+                <h2 style="padding-top:50px;">Business Context</h2>
+                <table style="width:90%;">
+                    <tbody>
+                        <tr>
+
+                            <td class="current-step shadow">
+                                <label>1.2 Register Lodgements onto the database</label>
+
+                                <p>
+                                    a) Audit trails are kept at all times i.e. (on Create, Update and Delete);<br />
+                                    b) The database is updated all the time when a change happens;<br />
+                                    c) The template should have been previously created and should be updateable by the system;<br />
+                                    d) The Registry clerk should be able to type his/her name on the template before sending to the Land Surveyor;<br />
+                                    e) Survey Record SG Number format is ‘SR99999/CCYY’ e.g. ‘SR1/2015’;<br />
+                                </p>
+
+                                <p></p>
+
+                            </td>
+                            <td class="arrow">
+                                <img src="../Common/Images/next-step-arrow.png"/>
+                            </td>
+                            <td class="next-step">
+                                <label><br/><br/>1.3 Confirm Numeric Data and generate dockets<br/><br/><font>Data Capturer</font><br/></label>
+
+                                <p></p>
+
+                            </td>
+                        </tr>
+                        <!--<tr id="ContextHelp_Context1_FailedStepPanel">
+                            <td class="failed-step shadow">
+                                <label></label>
+
+                                <p></p>
+                            </td>
+                        </tr>-->
+
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </footer>
+    <script>
+        LoadSections();
+    </script>
+</body>
+</html>
